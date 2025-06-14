@@ -7,11 +7,18 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
     [SerializeField] bool useGravity;
     [SerializeField] float gravityAcceleration;
 
+    [Header("Motion")]
+    public bool useVerletIntegration;
+
     [Header("Bounding Box")]
     [SerializeField] float groundY;
     [SerializeField] float ceilingY;
     [SerializeField] float leftWallX;
     [SerializeField] float rightWallX;
+
+    [Header("Simulation")]
+    [Tooltip("The number of sub steps of the simulation to run per frame")]
+    [SerializeField] int subSteps = 1;
 
     List<Softbody> softbodies = new List<Softbody>();
 
@@ -22,26 +29,31 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
 
     void Update()
     {
-        // Set the force on all points in all softbodies to zero
-        ResetForces();
+        float deltaTime = Time.deltaTime / subSteps;
 
-        // Apply gravity force to all points in all softbodies
-        if (useGravity) Gravity();
-
-        // Apply spring forces to all points in all softbodies
-        foreach (Softbody softbody in softbodies)
+        for (int i = 0; i < subSteps; i++)
         {
-            softbody.SpringPhysics(Time.deltaTime);
-        }
+            // Set the force on all points in all softbodies to zero
+            ResetForces();
 
-        // Update all point velocities and positions in all softbodies based on the each point's total force calculated during this simulation step
-        foreach (Softbody softbody in softbodies)
-        {
-            softbody.ApplyForces(Time.deltaTime);
-        }
+            // Apply gravity force to all points in all softbodies
+            if (useGravity) Gravity();
 
-        // Handle collision with outer bounds of simulation
-        BoundsCollision();
+            // Apply spring forces to all points in all softbodies
+            foreach (Softbody softbody in softbodies)
+            {
+                softbody.SpringPhysics(deltaTime);
+            }
+
+            // Update all point velocities and positions in all softbodies based on the each point's total force calculated during this simulation step
+            foreach (Softbody softbody in softbodies)
+            {
+                softbody.ApplyForces(deltaTime);
+            }
+
+            // Handle collision with outer bounds of simulation
+            BoundsCollision();
+        }
     }
 
     void Gravity()

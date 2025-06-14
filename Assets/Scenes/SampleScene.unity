@@ -150,22 +150,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - position: {x: 1.9, y: 2.74}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 1
   - position: {x: 0.73479116, y: 2.668664}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -0.3148279, y: 2.6338415}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -1.4946455, y: 2.605414}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
-    isPinned: 0
+    isPinned: 1
   - position: {x: -2.773964, y: 2.6196284}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
@@ -231,10 +236,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useGravity: 1
   gravityAcceleration: 9.81
+  useVerletIntegration: 0
   groundY: -4.85
   ceilingY: 8.16
   leftWallX: -10.94
   rightWallX: 11.7
+  subSteps: 1
 --- !u!4 &355966522
 Transform:
   m_ObjectHideFlags: 0
@@ -502,26 +509,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - position: {x: -0.10066301, y: 7.6018457}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -1.415196, y: 6.056932}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: 1.3358369, y: 6.0704837}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -2.892351, y: 3.9834938}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -0.0057989955, y: 3.9699426}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: 3.1653407, y: 4.010598}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
@@ -602,14 +615,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - position: {x: -5.68, y: 2.74}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -2.44, y: 1.83}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -4.38, y: -0.4}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
@@ -657,7 +673,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &971836206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -672,102 +688,127 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - position: {x: -8.494764, y: 5.457548}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -7.766696, y: 5.439581}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -8.53929, y: 6.2158365}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -7.788666, y: 6.2524524}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -6.9941025, y: 6.2487907}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -6.1519384, y: 6.234144}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -5.29879, y: 6.212175}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -7.0050874, y: 5.487181}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -6.1739078, y: 5.5567517}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -5.251189, y: 5.542105}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -8.554289, y: 4.8526278}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -7.8015203, y: 4.831373}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -7.002317, y: 4.781938}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -6.174277, y: 4.8107753}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -5.21029, y: 4.8107753}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -8.56729, y: 6.8869705}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -7.828776, y: 6.8869705}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -7.0096207, y: 6.9379025}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -6.1692433, y: 6.933658}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -5.269445, y: 6.869993}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -8.601245, y: 4.1918206}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -7.824532, y: 4.196065}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -6.97991, y: 4.1875763}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -6.177732, y: 4.1408887}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: -5.17607, y: 4.1663547}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
@@ -1037,18 +1078,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   points:
   - position: {x: 5, y: 3}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: 8, y: 3}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: 8, y: 0}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
   - position: {x: 5, y: 0}
+    previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
