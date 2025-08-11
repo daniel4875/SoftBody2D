@@ -52,7 +52,7 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
             }
 
             // Handle collision with outer bounds of simulation
-            BoundsCollision();
+            //BoundsCollision();
         }
     }
 
@@ -60,7 +60,7 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
     {
         foreach (Softbody softbody in softbodies)
         {
-            Vector2 gravityForce = softbody.pointMass * gravityAcceleration * Vector2.down;
+            Vector2 gravityForce = softbody.massOfPoint * gravityAcceleration * Vector2.down;
             softbody.AddForceToAllPoints(gravityForce);
         }
     }

@@ -135,7 +135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &20928473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,9 +187,10 @@ MonoBehaviour:
   - point1: 3
     point2: 4
     restingLength: 0
-  pointMass: 1
+  massOfPoint: 1
   springStiffness: 100
   springDamping: 1
+  useVerletIntegration: 0
 --- !u!4 &20928474
 Transform:
   m_ObjectHideFlags: 0
@@ -494,7 +495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &849111988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,9 +567,10 @@ MonoBehaviour:
   - point1: 5
     point2: 4
     restingLength: 0
-  pointMass: 1
+  massOfPoint: 1
   springStiffness: 200
   springDamping: 1
+  useVerletIntegration: 0
 --- !u!4 &849111989
 Transform:
   m_ObjectHideFlags: 0
@@ -600,7 +602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &849266103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -639,9 +641,10 @@ MonoBehaviour:
   - point1: 1
     point2: 2
     restingLength: 0
-  pointMass: 1
+  massOfPoint: 1
   springStiffness: 100
   springDamping: 1
+  useVerletIntegration: 0
 --- !u!4 &849266104
 Transform:
   m_ObjectHideFlags: 0
@@ -673,7 +676,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &971836206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,9 +1032,10 @@ MonoBehaviour:
   - point1: 14
     point2: 24
     restingLength: 0
-  pointMass: 1
+  massOfPoint: 1
   springStiffness: 2000
   springDamping: 1
+  useVerletIntegration: 0
 --- !u!4 &971836207
 Transform:
   m_ObjectHideFlags: 0
@@ -1042,6 +1046,61 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.4162061, y: -0.5927559, z: 0.0022357916}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &971947624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 971947626}
+  - component: {fileID: 971947625}
+  m_Layer: 0
+  m_Name: Euler Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &971947625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971947624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714026d628e0ada4d9f4d45a95d3bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - position: {x: -5.62679, y: 5.8588357}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  springs: []
+  massOfPoint: 1
+  springStiffness: 0
+  springDamping: 0
+  useVerletIntegration: 0
+--- !u!4 &971947626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971947624}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.720052, y: 2.5932765, z: 0.0065455833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1063,7 +1122,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1156975208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,9 +1175,10 @@ MonoBehaviour:
   - point1: 1
     point2: 3
     restingLength: 0
-  pointMass: 1
+  massOfPoint: 1
   springStiffness: 100
   springDamping: 1
+  useVerletIntegration: 0
 --- !u!4 &1156975209
 Transform:
   m_ObjectHideFlags: 0
@@ -1129,6 +1189,61 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.9578, y: 2.0704298, z: 0.0046458305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1724621170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724621172}
+  - component: {fileID: 1724621171}
+  m_Layer: 0
+  m_Name: Verlet Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1724621171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724621170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714026d628e0ada4d9f4d45a95d3bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - position: {x: 5.3213224, y: 5.9010262}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  springs: []
+  massOfPoint: 1
+  springStiffness: 0
+  springDamping: 0
+  useVerletIntegration: 1
+--- !u!4 &1724621172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724621170}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.720052, y: 2.5932765, z: 0.0065455833}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1145,4 +1260,6 @@ SceneRoots:
   - {fileID: 1156975209}
   - {fileID: 849111989}
   - {fileID: 971836207}
+  - {fileID: 971947626}
+  - {fileID: 1724621172}
   - {fileID: 355966522}

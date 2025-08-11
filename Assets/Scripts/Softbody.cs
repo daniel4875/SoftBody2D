@@ -1,19 +1,22 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Softbody : MonoBehaviour
 {
-    public Point[] points = { };
+    [HideInInspector] public Point[] points = { };
     [HideInInspector] public Spring[] springs = { };
 
-    [Header("Point Settings")]
+    [Header("Point Mass Settings")]
     [Tooltip("Mass of each point in the softbody in kg")]
-    public float pointMass;
+    public float massOfPoint;
 
     [Header("Spring Settings")]
     [Tooltip("Stiffness (spring constant) of each spring in the softbody")]
     public float springStiffness;
     [Tooltip("Damping coefficient of each spring in the softbody")]
     public float springDamping;
+
+    [Header("Temp (DELETE THIS!)")]
+    [SerializeField] bool useVerletIntegration = false;
 
     SoftbodyPhysicsEngine engine;
 
@@ -24,6 +27,16 @@ public class Softbody : MonoBehaviour
 
         InitialisePoints();
         SetSpringRestingLengths();
+
+        // TEMP (DELETE THIS!)
+        Point point = points[0];
+        Vector2 acceleration = point.force / massOfPoint;
+        float deltaTime = Time.deltaTime;
+        Debug.Log("Pos: " + point.position);
+        Debug.Log("Prev pos: " + point.previousPosition);
+        Debug.Log("Acc: " + acceleration); // acceleration (should be 0 since 0 force)
+        Debug.Log("New pos: " + (2 * point.position - point.previousPosition + acceleration * deltaTime * deltaTime));
+        Debug.Log("=====");
     }
 
     void InitialisePoints()
@@ -71,8 +84,10 @@ public class Softbody : MonoBehaviour
 
             // With Verlet integration, we don't store velocity for the points, so we need to calculate it using current and previous positions
             // With Euler integration, we can just use the stored velocity
-            Vector2 point1Velocity = engine.useVerletIntegration ? ((point1.position - point1.previousPosition) / deltaTime) : point1.velocity;
-            Vector2 point2Velocity = engine.useVerletIntegration ? ((point2.position - point2.previousPosition) / deltaTime) : point2.velocity;
+            //Vector2 point1Velocity = engine.useVerletIntegration ? ((point1.position - point1.previousPosition) / deltaTime) : point1.velocity;
+            //Vector2 point2Velocity = engine.useVerletIntegration ? ((point2.position - point2.previousPosition) / deltaTime) : point2.velocity;
+            Vector2 point1Velocity = useVerletIntegration ? ((point1.position - point1.previousPosition) / deltaTime) : point1.velocity;
+            Vector2 point2Velocity = useVerletIntegration ? ((point2.position - point2.previousPosition) / deltaTime) : point2.velocity;
 
             // Calculate the damping force (it resists the relative velocity along the spring)
             Vector2 relativeVelocity = point1Velocity - point2Velocity;
@@ -95,7 +110,8 @@ public class Softbody : MonoBehaviour
     // For each point in softbody, update velocity using the total force accumulated during the current simulation step, then use the new velocity to update the position
     public void ApplyForces(float deltaTime)
     {
-        if (engine.useVerletIntegration)
+        //if (engine.useVerletIntegration)
+        if (useVerletIntegration)
             VerletIntegration(deltaTime);
         else
             EulerIntegration(deltaTime);
@@ -110,14 +126,16 @@ public class Softbody : MonoBehaviour
             // Pinned points don't move, therefore can't have forces applied to them
             if (point.isPinned) continue;
 
-            // Calculate and apply velocity change
-            Vector2 acceleration = point.force / pointMass; // a = F/m (rearranged form of F = ma)
-            Vector2 velocityChange = acceleration * deltaTime; // v = at
-            point.velocity += velocityChange;
+            // Calculate acceleration and velocity change
+            Vector2 acceleration = point.force / massOfPoint; // a = F/m (rearranged form of F = ma)
+            Vector2 velocityChange = acceleration * deltaTime; // Δv = at
 
-            // Calculate and apply displacement to get updated position
-            Vector2 displacement = point.velocity * deltaTime; // s = vt
+            // Calculate and apply displacement to get updated position using suvat equation s = ut + ½at²
+            Vector2 displacement = point.velocity * deltaTime + 0.5f * velocityChange * deltaTime;
             point.position += displacement;
+
+            // Apply velocity change to get updated velocity
+            point.velocity += velocityChange;
 
             points[i] = point;
         }
@@ -125,6 +143,8 @@ public class Softbody : MonoBehaviour
 
     void VerletIntegration(float deltaTime)
     {
+        // TODO: Fix Verlet integration so that it matches Euler and Unity rigidbody (currently accelerates faster)
+
         for (int i = 0; i < points.Length; i++)
         {
             Point point = points[i];
@@ -133,8 +153,8 @@ public class Softbody : MonoBehaviour
             if (point.isPinned) continue;
 
             // Get acceleration using accumulated force
-            Vector2 acceleration = point.force / pointMass; // a = F/m (rearranged form of F = ma)
-
+            Vector2 acceleration = point.force / massOfPoint; // a = F/m (rearranged form of F = ma)
+            
             // Use verlet integration formula to calculate new position using current position, previous position and acceleration
             Vector2 newPosition = 2 * point.position - point.previousPosition + acceleration * deltaTime * deltaTime;
 
