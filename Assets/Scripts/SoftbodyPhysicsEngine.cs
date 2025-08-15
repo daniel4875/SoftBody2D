@@ -22,14 +22,9 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
 
     List<Softbody> softbodies = new List<Softbody>();
 
-    void Start()
+    void FixedUpdate()
     {
-
-    }
-
-    void Update()
-    {
-        float deltaTime = Time.deltaTime / subSteps;
+        float deltaTime = Time.fixedDeltaTime / subSteps;
 
         for (int i = 0; i < subSteps; i++)
         {
@@ -52,7 +47,7 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
             }
 
             // Handle collision with outer bounds of simulation
-            //BoundsCollision();
+            BoundsCollision();
         }
     }
 

@@ -242,7 +242,7 @@ MonoBehaviour:
   ceilingY: 8.16
   leftWallX: -10.94
   rightWallX: 11.7
-  subSteps: 1
+  subSteps: 10
 --- !u!4 &355966522
 Transform:
   m_ObjectHideFlags: 0
@@ -1035,7 +1035,7 @@ MonoBehaviour:
   massOfPoint: 1
   springStiffness: 2000
   springDamping: 1
-  useVerletIntegration: 0
+  useVerletIntegration: 1
 --- !u!4 &971836207
 Transform:
   m_ObjectHideFlags: 0
@@ -1067,7 +1067,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &971947625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1101,6 +1101,121 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.720052, y: 2.5932765, z: 0.0065455833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &973379250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 973379253}
+  - component: {fileID: 973379252}
+  - component: {fileID: 973379251}
+  m_Layer: 0
+  m_Name: RigidbodyComparison
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!50 &973379251
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973379250}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!212 &973379252
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973379250}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &973379253
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 973379250}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 5.858836, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1210,7 +1325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1724621171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1224,7 +1339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - position: {x: 5.3213224, y: 5.9010262}
+  - position: {x: 5.62679, y: 5.858836}
     previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
@@ -1249,6 +1364,752 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2103456960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2103456962}
+  - component: {fileID: 2103456961}
+  m_Layer: 0
+  m_Name: Big Block
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2103456961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103456960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714026d628e0ada4d9f4d45a95d3bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - position: {x: -8.494764, y: 5.457548}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.766696, y: 5.439581}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -8.53929, y: 6.2158365}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.788666, y: 6.2524524}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.9941025, y: 6.2487907}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.1519384, y: 6.234144}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -5.29879, y: 6.212175}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.0050874, y: 5.487181}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.1739078, y: 5.5567517}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -5.251189, y: 5.542105}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -8.554289, y: 4.8526278}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.8015203, y: 4.831373}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.002317, y: 4.781938}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.174277, y: 4.8107753}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -5.21029, y: 4.8107753}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -8.56729, y: 6.8869705}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.828776, y: 6.8869705}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.0096207, y: 6.9379025}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.1692433, y: 6.933658}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -5.269445, y: 6.869993}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -8.601245, y: 4.1918206}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.824532, y: 4.196065}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.97991, y: 4.1875763}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.177732, y: 4.1408887}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -5.17607, y: 4.1663547}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -8.633774, y: 3.42238}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.861527, y: 3.4395409}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -5.2187257, y: 3.3022513}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.1797442, y: 3.3194137}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.9863133, y: 3.3537345}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -5.1329207, y: 2.4270382}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.042456, y: 2.341234}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.9863133, y: 2.3927171}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.878688, y: 2.306912}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -8.771063, y: 2.4442003}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -4.1890626, y: 6.9232335}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -4.13758, y: 2.2725887}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -4.13758, y: 6.2196307}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -4.103257, y: 5.4817047}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -4.1204185, y: 4.0230155}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -4.086097, y: 3.1992853}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -8.839707, y: 1.2944092}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -4.1204185, y: 1.0369935}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -5.047115, y: 1.0884765}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -6.0252953, y: 1.0369935}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.0034747, y: 1.1056386}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -7.91301, y: 1.242926}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: -4.137579, y: 4.724057}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  springs:
+  - point1: 20
+    point2: 10
+    restingLength: 0
+  - point1: 20
+    point2: 21
+    restingLength: 0
+  - point1: 20
+    point2: 11
+    restingLength: 0
+  - point1: 10
+    point2: 0
+    restingLength: 0
+  - point1: 10
+    point2: 1
+    restingLength: 0
+  - point1: 10
+    point2: 11
+    restingLength: 0
+  - point1: 0
+    point2: 2
+    restingLength: 0
+  - point1: 0
+    point2: 3
+    restingLength: 0
+  - point1: 0
+    point2: 1
+    restingLength: 0
+  - point1: 2
+    point2: 15
+    restingLength: 0
+  - point1: 2
+    point2: 16
+    restingLength: 0
+  - point1: 15
+    point2: 16
+    restingLength: 0
+  - point1: 15
+    point2: 3
+    restingLength: 0
+  - point1: 2
+    point2: 1
+    restingLength: 0
+  - point1: 2
+    point2: 3
+    restingLength: 0
+  - point1: 0
+    point2: 11
+    restingLength: 0
+  - point1: 10
+    point2: 21
+    restingLength: 0
+  - point1: 16
+    point2: 17
+    restingLength: 0
+  - point1: 16
+    point2: 3
+    restingLength: 0
+  - point1: 16
+    point2: 4
+    restingLength: 0
+  - point1: 3
+    point2: 4
+    restingLength: 0
+  - point1: 3
+    point2: 1
+    restingLength: 0
+  - point1: 3
+    point2: 7
+    restingLength: 0
+  - point1: 1
+    point2: 7
+    restingLength: 0
+  - point1: 1
+    point2: 11
+    restingLength: 0
+  - point1: 1
+    point2: 12
+    restingLength: 0
+  - point1: 11
+    point2: 21
+    restingLength: 0
+  - point1: 11
+    point2: 12
+    restingLength: 0
+  - point1: 11
+    point2: 22
+    restingLength: 0
+  - point1: 21
+    point2: 22
+    restingLength: 0
+  - point1: 21
+    point2: 12
+    restingLength: 0
+  - point1: 11
+    point2: 7
+    restingLength: 0
+  - point1: 1
+    point2: 4
+    restingLength: 0
+  - point1: 3
+    point2: 17
+    restingLength: 0
+  - point1: 17
+    point2: 18
+    restingLength: 0
+  - point1: 17
+    point2: 4
+    restingLength: 0
+  - point1: 17
+    point2: 5
+    restingLength: 0
+  - point1: 4
+    point2: 5
+    restingLength: 0
+  - point1: 4
+    point2: 7
+    restingLength: 0
+  - point1: 4
+    point2: 8
+    restingLength: 0
+  - point1: 7
+    point2: 8
+    restingLength: 0
+  - point1: 7
+    point2: 12
+    restingLength: 0
+  - point1: 7
+    point2: 13
+    restingLength: 0
+  - point1: 12
+    point2: 13
+    restingLength: 0
+  - point1: 12
+    point2: 22
+    restingLength: 0
+  - point1: 12
+    point2: 23
+    restingLength: 0
+  - point1: 22
+    point2: 23
+    restingLength: 0
+  - point1: 22
+    point2: 13
+    restingLength: 0
+  - point1: 12
+    point2: 8
+    restingLength: 0
+  - point1: 7
+    point2: 5
+    restingLength: 0
+  - point1: 4
+    point2: 18
+    restingLength: 0
+  - point1: 18
+    point2: 19
+    restingLength: 0
+  - point1: 18
+    point2: 5
+    restingLength: 0
+  - point1: 18
+    point2: 6
+    restingLength: 0
+  - point1: 5
+    point2: 6
+    restingLength: 0
+  - point1: 5
+    point2: 8
+    restingLength: 0
+  - point1: 5
+    point2: 9
+    restingLength: 0
+  - point1: 8
+    point2: 9
+    restingLength: 0
+  - point1: 8
+    point2: 13
+    restingLength: 0
+  - point1: 8
+    point2: 14
+    restingLength: 0
+  - point1: 13
+    point2: 14
+    restingLength: 0
+  - point1: 13
+    point2: 23
+    restingLength: 0
+  - point1: 13
+    point2: 24
+    restingLength: 0
+  - point1: 23
+    point2: 24
+    restingLength: 0
+  - point1: 23
+    point2: 14
+    restingLength: 0
+  - point1: 13
+    point2: 9
+    restingLength: 0
+  - point1: 8
+    point2: 6
+    restingLength: 0
+  - point1: 5
+    point2: 19
+    restingLength: 0
+  - point1: 19
+    point2: 6
+    restingLength: 0
+  - point1: 6
+    point2: 9
+    restingLength: 0
+  - point1: 9
+    point2: 14
+    restingLength: 0
+  - point1: 14
+    point2: 24
+    restingLength: 0
+  - point1: 19
+    point2: 35
+    restingLength: 0
+  - point1: 19
+    point2: 37
+    restingLength: 0
+  - point1: 6
+    point2: 35
+    restingLength: 0
+  - point1: 6
+    point2: 37
+    restingLength: 0
+  - point1: 9
+    point2: 37
+    restingLength: 0
+  - point1: 9
+    point2: 38
+    restingLength: 0
+  - point1: 6
+    point2: 38
+    restingLength: 0
+  - point1: 9
+    point2: 47
+    restingLength: 0
+  - point1: 14
+    point2: 47
+    restingLength: 0
+  - point1: 14
+    point2: 39
+    restingLength: 0
+  - point1: 24
+    point2: 39
+    restingLength: 0
+  - point1: 24
+    point2: 40
+    restingLength: 0
+  - point1: 27
+    point2: 40
+    restingLength: 0
+  - point1: 27
+    point2: 36
+    restingLength: 0
+  - point1: 30
+    point2: 36
+    restingLength: 0
+  - point1: 30
+    point2: 42
+    restingLength: 0
+  - point1: 43
+    point2: 42
+    restingLength: 0
+  - point1: 35
+    point2: 37
+    restingLength: 0
+  - point1: 37
+    point2: 38
+    restingLength: 0
+  - point1: 38
+    point2: 47
+    restingLength: 0
+  - point1: 47
+    point2: 39
+    restingLength: 0
+  - point1: 39
+    point2: 40
+    restingLength: 0
+  - point1: 40
+    point2: 36
+    restingLength: 0
+  - point1: 36
+    point2: 42
+    restingLength: 0
+  - point1: 24
+    point2: 27
+    restingLength: 0
+  - point1: 27
+    point2: 30
+    restingLength: 0
+  - point1: 30
+    point2: 43
+    restingLength: 0
+  - point1: 23
+    point2: 28
+    restingLength: 0
+  - point1: 23
+    point2: 27
+    restingLength: 0
+  - point1: 28
+    point2: 27
+    restingLength: 0
+  - point1: 28
+    point2: 30
+    restingLength: 0
+  - point1: 31
+    point2: 30
+    restingLength: 0
+  - point1: 31
+    point2: 43
+    restingLength: 0
+  - point1: 44
+    point2: 43
+    restingLength: 0
+  - point1: 22
+    point2: 28
+    restingLength: 0
+  - point1: 29
+    point2: 28
+    restingLength: 0
+  - point1: 29
+    point2: 31
+    restingLength: 0
+  - point1: 32
+    point2: 31
+    restingLength: 0
+  - point1: 32
+    point2: 44
+    restingLength: 0
+  - point1: 45
+    point2: 44
+    restingLength: 0
+  - point1: 26
+    point2: 29
+    restingLength: 0
+  - point1: 26
+    point2: 32
+    restingLength: 0
+  - point1: 21
+    point2: 29
+    restingLength: 0
+  - point1: 33
+    point2: 32
+    restingLength: 0
+  - point1: 33
+    point2: 45
+    restingLength: 0
+  - point1: 20
+    point2: 26
+    restingLength: 0
+  - point1: 25
+    point2: 33
+    restingLength: 0
+  - point1: 25
+    point2: 26
+    restingLength: 0
+  - point1: 34
+    point2: 33
+    restingLength: 0
+  - point1: 34
+    point2: 46
+    restingLength: 0
+  - point1: 41
+    point2: 46
+    restingLength: 0
+  - point1: 20
+    point2: 25
+    restingLength: 0
+  - point1: 25
+    point2: 34
+    restingLength: 0
+  - point1: 34
+    point2: 41
+    restingLength: 0
+  - point1: 46
+    point2: 45
+    restingLength: 0
+  - point1: 46
+    point2: 32
+    restingLength: 0
+  - point1: 41
+    point2: 33
+    restingLength: 0
+  - point1: 33
+    point2: 29
+    restingLength: 0
+  - point1: 29
+    point2: 23
+    restingLength: 0
+  - point1: 28
+    point2: 24
+    restingLength: 0
+  - point1: 31
+    point2: 27
+    restingLength: 0
+  - point1: 44
+    point2: 30
+    restingLength: 0
+  - point1: 44
+    point2: 31
+    restingLength: 0
+  - point1: 31
+    point2: 28
+    restingLength: 0
+  - point1: 32
+    point2: 29
+    restingLength: 0
+  - point1: 45
+    point2: 32
+    restingLength: 0
+  - point1: 29
+    point2: 22
+    restingLength: 0
+  - point1: 25
+    point2: 21
+    restingLength: 0
+  - point1: 26
+    point2: 22
+    restingLength: 0
+  - point1: 34
+    point2: 26
+    restingLength: 0
+  - point1: 33
+    point2: 26
+    restingLength: 0
+  - point1: 26
+    point2: 21
+    restingLength: 0
+  - point1: 46
+    point2: 33
+    restingLength: 0
+  - point1: 14
+    point2: 38
+    restingLength: 0
+  - point1: 24
+    point2: 47
+    restingLength: 0
+  - point1: 27
+    point2: 39
+    restingLength: 0
+  - point1: 30
+    point2: 40
+    restingLength: 0
+  - point1: 43
+    point2: 36
+    restingLength: 0
+  - point1: 32
+    point2: 28
+    restingLength: 0
+  - point1: 45
+    point2: 31
+    restingLength: 0
+  massOfPoint: 1
+  springStiffness: 2000
+  springDamping: 1
+  useVerletIntegration: 0
+--- !u!4 &2103456962
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2103456960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.4162061, y: -0.5927559, z: 0.0022357916}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1260,6 +2121,8 @@ SceneRoots:
   - {fileID: 1156975209}
   - {fileID: 849111989}
   - {fileID: 971836207}
+  - {fileID: 2103456962}
   - {fileID: 971947626}
   - {fileID: 1724621172}
   - {fileID: 355966522}
+  - {fileID: 973379253}
