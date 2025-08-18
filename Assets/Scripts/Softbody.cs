@@ -9,6 +9,7 @@ public class Softbody : MonoBehaviour
     [Header("Point Mass Settings")]
     [Tooltip("Mass of each point in the softbody in kg")]
     public float massOfPoint;
+    public float collisionRadiusOfPoint;
 
     [Header("Spring Settings")]
     [Tooltip("Stiffness (spring constant) of each spring in the softbody")]
@@ -162,6 +163,57 @@ public class Softbody : MonoBehaviour
             point.position = newPosition;
 
             points[i] = point;
+        }
+    }
+
+    // Allow points within softbody to collide with each other
+    public void HandleInternalCollisions()
+    {
+        for (int i = 0; i < points.Length; i++)
+        {
+            Point point1 = points[i];
+
+            for (int j = i + 1; j < points.Length; j++)
+            {
+                Point point2 = points[j];
+
+                float minDistRequired = 2 * collisionRadiusOfPoint;
+
+                Vector2 diff = point2.position - point1.position;
+                float dist = diff.magnitude;
+
+                // If both points are within each other's collision radius, then we have a collision to resolve
+                if (dist < minDistRequired)
+                {
+                    // Calculate offset to move both points by such that they no longer overlap
+                    float amountToSeparate = (minDistRequired - dist) / 2;
+                    Vector2 dir = diff.normalized;
+                    Vector2 offset = amountToSeparate * dir;
+
+                    // Adjust position of both points (if not pinned)
+                    if (!point1.isPinned)
+                        point1.position -= offset;
+                    if (!point2.isPinned)
+                        point2.position += offset;
+
+                    // If using Euler integration, velocity along collision direction needs to be manually removed
+                    //if (!engine.useVerletIntegration)
+                    if (!useVerletIntegration)
+                    {
+                        // Correct point1 velocity
+                        Vector2 velocityAlongCollision = Vector2.Dot(point1.velocity, dir) * dir;
+                        point1.velocity -= velocityAlongCollision;
+
+                        // Correct point2 velocity
+                        velocityAlongCollision = Vector2.Dot(point2.velocity, dir) * dir;
+                        point2.velocity -= velocityAlongCollision;
+                    }
+
+                    // Update both points in array
+                    points[i] = point1;
+                    points[j] = point2;
+                }
+            }
         }
     }
 

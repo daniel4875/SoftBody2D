@@ -20,6 +20,9 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
     [Tooltip("The number of sub steps of the simulation to run per frame")]
     [SerializeField] int subSteps = 1;
 
+    [Header("Softbody")]
+    [SerializeField] bool handleInternalCollisions;
+
     List<Softbody> softbodies = new List<Softbody>();
 
     void FixedUpdate()
@@ -44,6 +47,15 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
             foreach (Softbody softbody in softbodies)
             {
                 softbody.ApplyForces(deltaTime);
+            }
+
+            // For each softbody, allow points within to collide with each other
+            if (handleInternalCollisions)
+            {
+                foreach (Softbody softbody in softbodies)
+                {
+                    softbody.HandleInternalCollisions();
+                }
             }
 
             // Handle collision with outer bounds of simulation

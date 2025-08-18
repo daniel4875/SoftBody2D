@@ -188,6 +188,7 @@ MonoBehaviour:
     point2: 4
     restingLength: 0
   massOfPoint: 1
+  collisionRadiusOfPoint: 0
   springStiffness: 100
   springDamping: 1
   useVerletIntegration: 0
@@ -243,6 +244,7 @@ MonoBehaviour:
   leftWallX: -10.94
   rightWallX: 11.7
   subSteps: 10
+  handleInternalCollisions: 1
 --- !u!4 &355966522
 Transform:
   m_ObjectHideFlags: 0
@@ -568,6 +570,7 @@ MonoBehaviour:
     point2: 4
     restingLength: 0
   massOfPoint: 1
+  collisionRadiusOfPoint: 0
   springStiffness: 200
   springDamping: 1
   useVerletIntegration: 0
@@ -642,6 +645,7 @@ MonoBehaviour:
     point2: 2
     restingLength: 0
   massOfPoint: 1
+  collisionRadiusOfPoint: 0
   springStiffness: 100
   springDamping: 1
   useVerletIntegration: 0
@@ -676,7 +680,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &971836206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,9 +1037,10 @@ MonoBehaviour:
     point2: 24
     restingLength: 0
   massOfPoint: 1
+  collisionRadiusOfPoint: 0.2
   springStiffness: 2000
   springDamping: 1
-  useVerletIntegration: 1
+  useVerletIntegration: 0
 --- !u!4 &971836207
 Transform:
   m_ObjectHideFlags: 0
@@ -1088,6 +1093,7 @@ MonoBehaviour:
     isPinned: 0
   springs: []
   massOfPoint: 1
+  collisionRadiusOfPoint: 0
   springStiffness: 0
   springDamping: 0
   useVerletIntegration: 0
@@ -1291,6 +1297,7 @@ MonoBehaviour:
     point2: 3
     restingLength: 0
   massOfPoint: 1
+  collisionRadiusOfPoint: 0
   springStiffness: 100
   springDamping: 1
   useVerletIntegration: 0
@@ -1346,6 +1353,7 @@ MonoBehaviour:
     isPinned: 0
   springs: []
   massOfPoint: 1
+  collisionRadiusOfPoint: 0
   springStiffness: 0
   springDamping: 0
   useVerletIntegration: 1
@@ -1380,7 +1388,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2103456961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2092,6 +2100,7 @@ MonoBehaviour:
     point2: 31
     restingLength: 0
   massOfPoint: 1
+  collisionRadiusOfPoint: 0
   springStiffness: 2000
   springDamping: 1
   useVerletIntegration: 0

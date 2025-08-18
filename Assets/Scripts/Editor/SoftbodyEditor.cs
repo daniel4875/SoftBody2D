@@ -98,6 +98,7 @@ public class SoftbodyEditor : Editor
         GUILayout.Label("Move point -> Select point and use the move handle that appears");
         GUILayout.Label("Add spring -> Select first point and Ctrl + Left Click on second point");
         GUILayout.Label("Delete spring -> Select first point and Ctrl + Left Click on second point");
+        GUILayout.Label("Pin point -> P key while point is selected");
         GUILayout.EndArea();
 
         Handles.EndGUI();
