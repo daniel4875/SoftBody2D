@@ -29,16 +29,6 @@ public class Softbody : MonoBehaviour
 
         InitialisePoints();
         SetSpringRestingLengths();
-
-        // TEMP (DELETE THIS!)
-        Point point = points[0];
-        Vector2 acceleration = point.force / massOfPoint;
-        float deltaTime = Time.deltaTime;
-        Debug.Log("Pos: " + point.position);
-        Debug.Log("Prev pos: " + point.previousPosition);
-        Debug.Log("Acc: " + acceleration); // acceleration (should be 0 since 0 force)
-        Debug.Log("New pos: " + (2 * point.position - point.previousPosition + acceleration * deltaTime * deltaTime));
-        Debug.Log("=====");
     }
 
     void InitialisePoints()
@@ -167,8 +157,10 @@ public class Softbody : MonoBehaviour
     }
 
     // Allow points within softbody to collide with each other
-    public void HandleInternalCollisions()
+    public void HandleInternalCollisions(float deltaTime)
     {
+        // TODO: Create two connected points with one above the other with fixed point at bottom, and compare euler and verlet point collision to try to see what problem is and fix it
+
         for (int i = 0; i < points.Length; i++)
         {
             Point point1 = points[i];
@@ -207,6 +199,25 @@ public class Softbody : MonoBehaviour
                         // Correct point2 velocity
                         velocityAlongCollision = Vector2.Dot(point2.velocity, dir) * dir;
                         point2.velocity -= velocityAlongCollision;
+                    }
+                    // If using Verlet integration, previous position needs to be adjusted so that the implicit velocity has no velocity along collision direction
+                    else
+                    {
+                        // Calculate velocity from current and previous positions
+                        Vector2 point1Velocity = (point1.position - point1.previousPosition) / deltaTime;
+                        Vector2 point2Velocity = (point2.position - point2.previousPosition) / deltaTime;
+
+                        // Correct point1 velocity
+                        Vector2 velocityAlongCollision = Vector2.Dot(point1Velocity, dir) * dir;
+                        point1Velocity -= velocityAlongCollision;
+
+                        // Correct point2 velocity
+                        velocityAlongCollision = Vector2.Dot(point2Velocity, dir) * dir;
+                        point2Velocity -= velocityAlongCollision;
+
+                        // Translate velocity into previous position
+                        point1.previousPosition = point1.position - (point1Velocity * deltaTime);
+                        point2.previousPosition = point2.position - (point2Velocity * deltaTime);
                     }
 
                     // Update both points in array

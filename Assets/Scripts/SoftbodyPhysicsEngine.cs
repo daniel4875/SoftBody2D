@@ -54,8 +54,10 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
             {
                 foreach (Softbody softbody in softbodies)
                 {
-                    softbody.HandleInternalCollisions();
+                    softbody.HandleInternalCollisions(deltaTime);
                 }
+
+                Debug.Log("=================");
             }
 
             // Handle collision with outer bounds of simulation
