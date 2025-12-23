@@ -2,6 +2,9 @@
 .vsconfig
 *.csproj
 *.sln
+*.slnx
+.vscode/
+.idea/
 Library/
 Logs/
 obj/
