@@ -17,9 +17,6 @@ public class Softbody : MonoBehaviour
     [Tooltip("Damping coefficient of each spring in the softbody")]
     public float springDamping;
 
-    [Header("FOR TESTING ONLY")]
-    [SerializeField] bool useVerletIntegration = false;
-
     SoftbodyPhysicsEngine engine;
 
     void Start()
@@ -75,11 +72,8 @@ public class Softbody : MonoBehaviour
             Vector2 springForce = -springStiffness * springDisplacement; // F = -ke
 
             // With Verlet integration, we don't store velocity for the points, so we need to calculate it using current and previous positions
-            // With Euler integration, we can just use the stored velocity
-            //Vector2 point1Velocity = engine.useVerletIntegration ? ((point1.position - point1.previousPosition) / deltaTime) : point1.velocity;
-            //Vector2 point2Velocity = engine.useVerletIntegration ? ((point2.position - point2.previousPosition) / deltaTime) : point2.velocity;
-            Vector2 point1Velocity = useVerletIntegration ? ((point1.position - point1.previousPosition) / deltaTime) : point1.velocity;
-            Vector2 point2Velocity = useVerletIntegration ? ((point2.position - point2.previousPosition) / deltaTime) : point2.velocity;
+            Vector2 point1Velocity = (point1.position - point1.previousPosition) / deltaTime;
+            Vector2 point2Velocity = (point2.position - point2.previousPosition) / deltaTime;
 
             // Calculate the damping force (it resists the relative velocity along the spring)
             Vector2 relativeVelocity = point1Velocity - point2Velocity;
@@ -99,41 +93,8 @@ public class Softbody : MonoBehaviour
         }
     }
 
-    // For each point in softbody, use the total force accumulated during the current simulation step to update velocity and position
+    // For each point in softbody, use the total force accumulated during the current simulation step to update position using Verlet integration
     public void ApplyForces(float deltaTime)
-    {
-        //if (engine.useVerletIntegration)
-        if (useVerletIntegration)
-            VerletIntegration(deltaTime);
-        else
-            EulerIntegration(deltaTime);
-    }
-
-    void EulerIntegration(float deltaTime)
-    {
-        for (int i = 0; i < points.Length; i++)
-        {
-            Point point = points[i];
-
-            // Pinned points don't move, therefore can't have forces applied to them
-            if (point.isPinned) continue;
-
-            // Calculate acceleration
-            Vector2 acceleration = point.force / massOfPoint; // a = F/m (rearranged form of F = ma)
-
-            // Calculate and apply velocity change to get updated velocity
-            Vector2 velocityChange = acceleration * deltaTime; // Δv = at
-            point.velocity += velocityChange;
-
-            // Calculate and apply displacement to get updated position
-            Vector2 displacement = point.velocity * deltaTime;
-            point.position += displacement;
-
-            points[i] = point;
-        }
-    }
-
-    void VerletIntegration(float deltaTime)
     {
         for (int i = 0; i < points.Length; i++)
         {
@@ -159,8 +120,6 @@ public class Softbody : MonoBehaviour
     // Allow points within softbody to collide with each other
     public void HandleInternalCollisions(float deltaTime)
     {
-        // TODO: Create two connected points with one above the other with fixed point at bottom, and compare euler and verlet point collision to try to see what problem is and fix it
-
         for (int i = 0; i < points.Length; i++)
         {
             Point point1 = points[i];
@@ -188,37 +147,23 @@ public class Softbody : MonoBehaviour
                     if (!point2.isPinned)
                         point2.position += offset;
 
-                    // If using Euler integration, velocity along collision direction needs to be manually removed
-                    //if (!engine.useVerletIntegration)
-                    if (!useVerletIntegration)
-                    {
-                        // Correct point1 velocity
-                        Vector2 velocityAlongCollision = Vector2.Dot(point1.velocity, dir) * dir;
-                        point1.velocity -= velocityAlongCollision;
+                    // With Verlet integration, previous position needs to be adjusted so that the implicit velocity has no velocity along collision direction
+                    
+                    // Calculate velocity from current and previous positions
+                    Vector2 point1Velocity = (point1.position - point1.previousPosition) / deltaTime;
+                    Vector2 point2Velocity = (point2.position - point2.previousPosition) / deltaTime;
 
-                        // Correct point2 velocity
-                        velocityAlongCollision = Vector2.Dot(point2.velocity, dir) * dir;
-                        point2.velocity -= velocityAlongCollision;
-                    }
-                    // If using Verlet integration, previous position needs to be adjusted so that the implicit velocity has no velocity along collision direction
-                    else
-                    {
-                        // Calculate velocity from current and previous positions
-                        Vector2 point1Velocity = (point1.position - point1.previousPosition) / deltaTime;
-                        Vector2 point2Velocity = (point2.position - point2.previousPosition) / deltaTime;
+                    // Correct point1 velocity
+                    Vector2 velocityAlongCollision = Vector2.Dot(point1Velocity, dir) * dir;
+                    point1Velocity -= velocityAlongCollision;
 
-                        // Correct point1 velocity
-                        Vector2 velocityAlongCollision = Vector2.Dot(point1Velocity, dir) * dir;
-                        point1Velocity -= velocityAlongCollision;
+                    // Correct point2 velocity
+                    velocityAlongCollision = Vector2.Dot(point2Velocity, dir) * dir;
+                    point2Velocity -= velocityAlongCollision;
 
-                        // Correct point2 velocity
-                        velocityAlongCollision = Vector2.Dot(point2Velocity, dir) * dir;
-                        point2Velocity -= velocityAlongCollision;
-
-                        // Translate velocity into previous position
-                        point1.previousPosition = point1.position - (point1Velocity * deltaTime);
-                        point2.previousPosition = point2.position - (point2Velocity * deltaTime);
-                    }
+                    // Translate velocity into previous position
+                    point1.previousPosition = point1.position - (point1Velocity * deltaTime);
+                    point2.previousPosition = point2.position - (point2Velocity * deltaTime);
 
                     // Update both points in array
                     points[i] = point1;

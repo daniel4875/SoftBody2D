@@ -7,9 +7,6 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
     [SerializeField] bool useGravity;
     [SerializeField] float gravityAcceleration;
 
-    [Header("Motion")]
-    public bool useVerletIntegration;
-
     [Header("Bounding Box")]
     [SerializeField] float groundY;
     [SerializeField] float ceilingY;
