@@ -119,6 +119,269 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &12367677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 12367678}
+  - component: {fileID: 12367679}
+  m_Layer: 0
+  m_Name: Box (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &12367678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12367677}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.82777, y: 1.5224798, z: 0.0046458305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1709310278}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &12367679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 12367677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714026d628e0ada4d9f4d45a95d3bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - position: {x: 3.8757753, y: 5.0265923}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 4.206942, y: 5.018325}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 4.311338, y: 3.3058772}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 3.9079783, y: 3.296745}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 2.6836805, y: 3.31244}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 2.2909915, y: 3.31244}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 1.9348316, y: 3.3763661}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 1.4690843, y: 3.3854985}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 1.1037921, y: 3.367234}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 3.5329847, y: 3.31244}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 3.058105, y: 3.31244}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 3.5512493, y: 5.029313}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 3.1220312, y: 5.001916}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 2.7110775, y: 5.0384455}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 2.3275206, y: 5.0110483}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 1.943964, y: 5.0567102}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 1.4142904, y: 5.029313}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  - position: {x: 1.1129243, y: 5.0110483}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  springs:
+  - point1: 2
+    point2: 3
+    restingLength: 0
+  - point1: 3
+    point2: 0
+    restingLength: 0
+  - point1: 0
+    point2: 2
+    restingLength: 0
+  - point1: 1
+    point2: 0
+    restingLength: 0
+  - point1: 2
+    point2: 1
+    restingLength: 0
+  - point1: 1
+    point2: 3
+    restingLength: 0
+  - point1: 3
+    point2: 9
+    restingLength: 0
+  - point1: 9
+    point2: 10
+    restingLength: 0
+  - point1: 10
+    point2: 4
+    restingLength: 0
+  - point1: 4
+    point2: 5
+    restingLength: 0
+  - point1: 5
+    point2: 6
+    restingLength: 0
+  - point1: 6
+    point2: 7
+    restingLength: 0
+  - point1: 7
+    point2: 8
+    restingLength: 0
+  - point1: 8
+    point2: 17
+    restingLength: 0
+  - point1: 17
+    point2: 16
+    restingLength: 0
+  - point1: 16
+    point2: 15
+    restingLength: 0
+  - point1: 15
+    point2: 14
+    restingLength: 0
+  - point1: 14
+    point2: 13
+    restingLength: 0
+  - point1: 13
+    point2: 12
+    restingLength: 0
+  - point1: 12
+    point2: 11
+    restingLength: 0
+  - point1: 11
+    point2: 0
+    restingLength: 0
+  - point1: 16
+    point2: 7
+    restingLength: 0
+  - point1: 15
+    point2: 6
+    restingLength: 0
+  - point1: 14
+    point2: 5
+    restingLength: 0
+  - point1: 13
+    point2: 4
+    restingLength: 0
+  - point1: 12
+    point2: 10
+    restingLength: 0
+  - point1: 11
+    point2: 9
+    restingLength: 0
+  - point1: 7
+    point2: 17
+    restingLength: 0
+  - point1: 16
+    point2: 8
+    restingLength: 0
+  - point1: 7
+    point2: 15
+    restingLength: 0
+  - point1: 16
+    point2: 6
+    restingLength: 0
+  - point1: 6
+    point2: 14
+    restingLength: 0
+  - point1: 15
+    point2: 5
+    restingLength: 0
+  - point1: 5
+    point2: 13
+    restingLength: 0
+  - point1: 14
+    point2: 4
+    restingLength: 0
+  - point1: 13
+    point2: 10
+    restingLength: 0
+  - point1: 4
+    point2: 12
+    restingLength: 0
+  - point1: 12
+    point2: 9
+    restingLength: 0
+  - point1: 10
+    point2: 11
+    restingLength: 0
+  - point1: 11
+    point2: 3
+    restingLength: 0
+  - point1: 9
+    point2: 0
+    restingLength: 0
+  massOfPoint: 1
+  collisionRadiusOfPoint: 0
+  springStiffness: 100
+  springDamping: 1
 --- !u!1 &20928472
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +469,149 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &30406781
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 30406782}
+  - component: {fileID: 30406783}
+  m_Layer: 0
+  m_Name: Object4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &30406782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30406781}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1709310278}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &30406783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30406781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714026d628e0ada4d9f4d45a95d3bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Softbody
+  points:
+  - position: {x: -0.761773, y: 4.42101}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 0
+  springs: []
+  massOfPoint: 1
+  collisionRadiusOfPoint: 0.2
+  springStiffness: 2000
+  springDamping: 1
+--- !u!1 &160423767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 160423768}
+  - component: {fileID: 160423769}
+  m_Layer: 0
+  m_Name: Box
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &160423768
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160423767}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.82777, y: 1.5224798, z: 0.0046458305}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1709310278}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &160423769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160423767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714026d628e0ada4d9f4d45a95d3bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points:
+  - position: {x: 1.902915, y: 2.6694124}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 1
+  - position: {x: 4.868117, y: 2.652013}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 1
+  - position: {x: 4.9203153, y: 0.052198052}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 1
+  - position: {x: 1.989912, y: 0.06959736}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 1
+  springs:
+  - point1: 2
+    point2: 3
+    restingLength: 0
+  - point1: 3
+    point2: 0
+    restingLength: 0
+  - point1: 0
+    point2: 2
+    restingLength: 0
+  - point1: 1
+    point2: 0
+    restingLength: 0
+  - point1: 2
+    point2: 1
+    restingLength: 0
+  - point1: 1
+    point2: 3
+    restingLength: 0
+  massOfPoint: 1
+  collisionRadiusOfPoint: 0
+  springStiffness: 100
+  springDamping: 1
 --- !u!1 &355966520
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,22 +1333,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - position: {x: 5, y: 3}
+  - position: {x: 1.902915, y: 2.6694124}
     previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
-  - position: {x: 8, y: 3}
+  - position: {x: 4.868117, y: 2.652013}
     previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
-  - position: {x: 8, y: 0}
+  - position: {x: 4.9203153, y: 0.052198052}
     previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
-  - position: {x: 5, y: 0}
+  - position: {x: 1.989912, y: 0.06959736}
     previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
@@ -1001,7 +1407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1407294017
 Transform:
   m_ObjectHideFlags: 0
@@ -1407,6 +1813,10 @@ Transform:
   m_Children:
   - {fileID: 1931619404}
   - {fileID: 1407294017}
+  - {fileID: 1741273954}
+  - {fileID: 30406782}
+  - {fileID: 160423768}
+  - {fileID: 12367678}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1724621170
@@ -1464,6 +1874,69 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1741273953
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1741273954}
+  - component: {fileID: 1741273955}
+  m_Layer: 0
+  m_Name: Object3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1741273954
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741273953}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1709310278}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1741273955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1741273953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 714026d628e0ada4d9f4d45a95d3bdc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Softbody
+  points:
+  - position: {x: -2.7488375, y: 2.9353542}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 1
+  - position: {x: 1.0024431, y: 2.953925}
+    previousPosition: {x: 0, y: 0}
+    velocity: {x: 0, y: 0}
+    force: {x: 0, y: 0}
+    isPinned: 1
+  springs:
+  - point1: 0
+    point2: 1
+    restingLength: 0
+  massOfPoint: 1
+  collisionRadiusOfPoint: 0.2
+  springStiffness: 2000
+  springDamping: 1
 --- !u!1 &1856491638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +2016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1931619404
 Transform:
   m_ObjectHideFlags: 0
@@ -1682,7 +2155,7 @@ MonoBehaviour:
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
     isPinned: 0
-  - position: {x: -6.97991, y: 4.1875763}
+  - position: {x: -7.418947, y: 4.132696}
     previousPosition: {x: 0, y: 0}
     velocity: {x: 0, y: 0}
     force: {x: 0, y: 0}
