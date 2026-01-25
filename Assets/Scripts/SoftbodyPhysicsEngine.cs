@@ -126,15 +126,26 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
                         // If no line segment intersection then there is no collision to handle
                         if (!intersects) continue;
 
-                        // TODO: Push point back to intersection point
-                        if (!point.isPinned)
-                        {
-                            point.position -= (point.position - intersection) * 1.01f;
-                            point.previousPosition = point.position;
-                        }
-                        
+                        // TODO: Resolve collision properly
+                        // if (!point.isPinned)
+                        // {
+                        //     point.position -= (point.position - intersection) * 1.01f;
+                        //     point.previousPosition = point.position;
+                        // }
+
+                        Vector2 closestPoint = GetClosestPointOnLine(springPoint1.position, springPoint2.position, point.position);
+                        Vector2 offset = point.position - closestPoint;
+
+                        point.position -= offset * 0.5f;
+                        springPoint1.position += offset * 0.5f;
+                        springPoint2.position += offset * 0.5f;
+
                         // Update point
                         softbody1.points[k] = point;
+                        
+                        // Update spring points
+                        softbody2.points[spring.point1] = springPoint1;
+                        softbody2.points[spring.point2] = springPoint2;
                     }
                 }
             }
@@ -167,6 +178,19 @@ public class SoftbodyPhysicsEngine : MonoBehaviour
         }
 
         return false;
+    }
+
+    // Get closest point to C along line AB
+    Vector2 GetClosestPointOnLine(Vector2 a, Vector2 b, Vector2 c)
+    {
+        Vector2 ab = b - a;
+        Vector2 ac = c - a;
+        
+        // Find how far along AB the closest point is
+        float t = Vector2.Dot(ac, ab) / ab.sqrMagnitude;
+        
+        // Calculate and return closest point
+        return a + t * ab;
     }
 
     // Calculate the 2D cross product

@@ -17,7 +17,7 @@ public class Softbody : MonoBehaviour
     [Tooltip("Damping coefficient of each spring in the softbody")]
     public float springDamping;
 
-    SoftbodyPhysicsEngine engine;
+    private SoftbodyPhysicsEngine engine;
 
     void Start()
     {
